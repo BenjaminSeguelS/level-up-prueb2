@@ -1,0 +1,341 @@
+/* --- Estilos Generales para la página de ofertas/productos --- */
+.ofertas-root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    color: #f0f0f0;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* --- Títulos --- */
+.ofertas-root h1 {
+    color: #e50074;
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.ofertas-root h2 {
+    color: #00bfff;
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* --- Contenedor Principal --- */
+.ofertas-root .container-productos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ofertas-root .tabla-productos {
+    width: 100%;
+    border-collapse: collapse; /* Bordes limpios */
+    margin-bottom: 30px;
+    background-color: #2a2a2a; /* Fondo oscuro para la tabla */
+    border-radius: 8px; /* Esquinas redondeadas */
+    overflow: hidden; /* Oculta lo que se salga del radio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Encabezado de la tabla */
+.ofertas-root .tabla-productos thead tr {
+    background-color: #e50074; /* Encabezado rosa gamer */
+    color: #ffffff;
+    text-align: left;
+}
+
+.ofertas-root .tabla-productos th {
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* Celdas del cuerpo de la tabla */
+.ofertas-root .tabla-productos td {
+    padding: 15px;
+    border-bottom: 1px solid #3a3a3a; /* Línea separadora sutil */
+    color: #ccc;
+    vertical-align: middle; /* Centra verticalmente el botón */
+}
+
+/* Filas del cuerpo */
+.ofertas-root .tabla-productos tbody tr {
+    background-color: #2a2a2a;
+    transition: background-color 0.3s ease;
+}
+
+/* Filas alternas (estilo cebra) */
+.ofertas-root .tabla-productos tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+/* Efecto Hover: resalta la fila */
+.ofertas-root .tabla-productos tbody tr:hover {
+    background-color: #00bfff; /* Resaltado azul */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.ofertas-root .tabla-productos tbody tr:hover td {
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+}
+
+
+.ofertas-root .logo-header {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 1001;
+}
+.ofertas-root .logo-header a {
+    color: #e50074;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ==================================== */
+/* --- Estilos del Carrito de Compras --- */
+/* ==================================== */
+
+/* --- Botón "Agregar" --- */
+.ofertas-root .btn-agregar {
+    background-color: #e50074; /* Rosa gamer */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ofertas-root .btn-agregar:hover {
+    background-color: #ff3399; /* Rosa más claro */
+    transform: translateY(-2px);
+}
+
+.ofertas-root .btn-agregar:active {
+    transform: translateY(0);
+}
+
+/* --- Icono del Carrito en el Header --- */
+.ofertas-root .icono-carrito {
+    position: fixed;
+    top: 20px;
+    right: 100px; 
+    z-index: 1001;
+    color: #00bfff; 
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+    padding: 5px; /* Un padding base pequeño */
+    border-radius: 50%;
+}
+.ofertas-root .icono-carrito:hover {
+    background-color: #e50074; /* Fondo rosa al pasar el ratón */
+    color: #ffffff; /* El ícono se vuelve blanco */
+    padding: 10px; /* Aumenta el padding para formar el cuadrado */
+    border-radius: 5px; /* Esquinas de 5px (puedes poner 0px para un cuadrado perfecto) */
+}
+/* Contador de items */
+.ofertas-root .carrito-contador {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #e50074;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.5em; /* 12px */
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* --- Modal del Carrito (Ventana Emergente) --- */
+.ofertas-root .modal-carrito-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ofertas-root .modal-carrito-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.ofertas-root .modal-carrito-contenido {
+    background-color: #2a0d485a; /* Color azul que pusiste */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00bfff;
+}
+
+.ofertas-root .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.ofertas-root .modal-header h2 {
+    color: #00bfff;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.ofertas-root .btn-cerrar-modal {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    font-size: 2.5em;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.ofertas-root .btn-cerrar-modal:hover {
+    color: #e50074;
+}
+
+.ofertas-root .lista-items-carrito {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.ofertas-root .item-carrito {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    color: #ccc;
+}
+.ofertas-root .item-carrito p {
+    margin: 0;
+}
+.ofertas-root .item-carrito p:first-child {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.ofertas-root .btn-quitar {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.ofertas-root .btn-quitar:hover {
+    background-color: #e50074;
+}
+
+.ofertas-root .modal-footer {
+    border-top: 2px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: right;
+}
+.ofertas-root .modal-footer h3 {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    margin: 0 0 15px 0;
+}
+.ofertas-root .modal-footer h3 span {
+    color: #00bfff;
+}
+
+.ofertas-root .btn-checkout {
+    background-color: #00bfff;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.ofertas-root .btn-checkout:hover {
+    background-color: #40cfff;
+}
+
+/* --- Responsive Design (Básico) --- */
+@media (max-width: 768px) {
+    .ofertas-root h1 { font-size: 2.2em; }
+    .ofertas-root h2 { font-size: 1.6em; }
+    .ofertas-root .container-productos {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .ofertas-root .tabla-productos th, .ofertas-root .tabla-productos td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .ofertas-root .tabla-productos th:nth-child(2),
+    .ofertas-root .tabla-productos td:nth-child(2) {
+        display: none; 
+    }
+    .ofertas-root .icono-carrito {
+        right: 80px;
+        font-size: 1.6em;
+    }
+    .ofertas-root .buttonM {
+        right: 15px;
+    }
+    .ofertas-root .modal-carrito-contenido {
+        width: 95%;
+        padding: 20px;
+    }
+    .ofertas-root .item-carrito {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 10px;
+    }
+    .ofertas-root .item-carrito p:nth-child(3) {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .ofertas-root .item-carrito {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .ofertas-root .item-carrito p:nth-child(2),
+    .ofertas-root .item-carrito p:nth-child(3) {
+        display: none;
+    }
+    .ofertas-root .btn-checkout {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 1.2em;
+    }
+}

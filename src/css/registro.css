@@ -1,0 +1,156 @@
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fondo negro */
+    color: #f0f0f0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Contenedor del Formulario --- */
+.registro-container {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #00bfff; /* Borde azul gamer */
+}
+
+.registro-container h2 {
+    text-align: center;
+    color: #e50074; /* Rosa gamer */
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Estructura de Campos (reemplaza a <br>) --- */
+.campo-grupo {
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    display: block; /* Cada label en su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1.1em;
+}
+
+.campo-grupo input[type="text"],
+.campo-grupo input[type="email"],
+.campo-grupo input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    box-sizing: border-box; /* Asegura que el padding no desborde */
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f0f0f0;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-grupo input:focus {
+    border-color: #00bfff; /* Borde azul al enfocar */
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+    outline: none;
+}
+
+/* --- Mensajes de Error --- */
+.error-texto {
+    color: #ff4d4d; /* Rojo claro para errores */
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+    min-height: 1em; /* Evita que el layout "salte" */
+}
+
+/* --- Botón --- */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #e50074;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff3399;
+    transform: translateY(-2px);
+}
+
+/* --- Enlace inferior --- */
+.enlace-login {
+    text-align: center;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.enlace-login a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-login a:hover {
+    text-decoration: underline;
+}
+
+
+.contenedor-menu {
+    background-color: #2a2a2a; /* Fondo gris oscuro para el contenedor */
+    border-bottom: 2px solid #00bfff; /* Borde azul */
+}
+
+/* --- La lista (UL) --- */
+.contenedor-menu ul {
+    /* ¡La clave para ordenar de izquierda a derecha! */
+    display: flex;
+    
+    /* Centra los links en el contenedor */
+    justify-content: center; 
+    
+    /* Quita los puntos de la lista */
+    list-style: none;
+    
+    /* Limpia los estilos por defecto del navegador */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Los links (A) y sus items (LI) --- */
+.contenedor-menu li a {
+    display: block; /* Hace que el link ocupe todo el espacio del botón */
+    padding: 15px 25px; /* 15px arriba/abajo, 25px a los lados */
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón (hover) */
+.contenedor-menu li a:hover {
+    background-color: #e50074; /* Se pone rosa */
+    color: #fff;
+}
+
+/* Estilo para el link activo */
+.contenedor-menu li a.activo {
+    background-color: #00bfff; /* Se pone azul */
+    color: #000;
+}

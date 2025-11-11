@@ -1,0 +1,198 @@
+.seccion-contacto {
+    background-color: #2a2a2a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px; 
+}
+
+.titulo-seccion {
+    font-size: 3em;
+    color: #e50074; 
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.subtitulo-seccion {
+    font-size: 1.2em;
+    color: #ccc;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.formulario-contacto, .info-adicional-contacto {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.formulario-contacto h2, .info-adicional-contacto h2 {
+    color: #00bfff; /* Azul brillante */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.info-adicional-contacto h3 {
+    color: #e50074;
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+
+/* Estilos del Formulario */
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    display: block; /* Cada label en su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1.1em;
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo input[type="email"],
+.grupo-campo textarea {
+    width: calc(100% - 20px); /* Ocupa casi todo el ancho con padding */
+    padding: 12px 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f0f0f0;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-campo input[type="text"]:focus,
+.grupo-campo input[type="email"]:focus,
+.grupo-campo textarea:focus {
+    border-color: #00bfff; /* Borde azul al enfocar */
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5); /* Sombra azul al enfocar */
+    outline: none; /* Quita el contorno por defecto del navegador */
+}
+
+.grupo-campo textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+
+
+/* Estilos de la Información Adicional */
+.info-adicional-contacto p {
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 1em;
+}
+
+.info-adicional-contacto p a {
+    color: #2fce56ad;
+    text-decoration: underline;
+}
+.info-adicional-contacto p a:hover {
+    color: #e50074;
+}
+
+.metodo-contacto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon-contacto {
+    font-size: 1.5em;
+    color: #e50074;
+    margin-right: 15px;
+    width: 30px; /* Para alinear el texto si los iconos tienen distinto ancho */
+    text-align: center;
+}
+
+.redes-sociales-contacto a {
+    font-size: 2em;
+    color: #00bfff;
+    margin-right: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.redes-sociales-contacto a:hover {
+    color: #e50074;
+    transform: translateY(-3px);
+    text-decoration: none; /* Quitar subrayado al pasar el ratón */
+}
+
+/* Estilos del Mapa (Opcional) */
+.mapa-container {
+    margin-top: 30px;
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Responsive Design para Contacto */
+@media (max-width: 900px) {
+    .grid-contacto {
+        grid-template-columns: 1fr; /* Se apilan en una sola columna en pantallas más pequeñas */
+        gap: 30px;
+    }
+    .titulo-seccion {
+        font-size: 2.5em;
+    }
+    .subtitulo-seccion {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .seccion-contacto {
+        padding: 25px;
+    }
+    .formulario-contacto, .info-adicional-contacto {
+        padding: 20px;
+    }
+    .titulo-seccion {
+        font-size: 2em;
+    }
+    .formulario-contacto h2, .info-adicional-contacto h2 {
+        font-size: 1.5em;
+    }
+    .metodo-contacto p {
+        font-size: 0.9em;
+    }
+    .redes-sociales-contacto a {
+        font-size: 1.8em;
+        margin-right: 15px;
+    }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fondo negro */
+    color: #f0f0f0; /* Texto claro */
+    line-height: 1.6;
+}
+.menu-principal ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}

@@ -1,0 +1,408 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+    margin: 0;
+}
+h1{/*titulo*/
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color:white;
+    font-size: 20px;
+}
+
+p.p1{ /* parrafo 1*/
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color:rgb(255, 255, 255) ;
+}
+p.p2{ /*texto mision*/
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color: rgb(255, 255, 255);
+}
+p.p3{/*vision*/
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color: rgb(255, 255, 255);
+}
+p.p4{/*texto vision*/
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color:rgb(255, 255, 255);
+}
+ul.section-nav{
+    display: flex;  
+    justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    width: 100%;
+    
+}
+button.bntIni{
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+button.btnRegInis{
+    color: black;
+    background-color: white;
+    padding:10px;
+}
+button.btnContacto{
+    color: black;
+    background-color: white;
+    padding:10px;
+}
+
+.login-container {
+  margin: 100px auto;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container label {
+  display: block;
+  margin-top: 10px;
+}
+
+.login-container input {
+  width: 100%;
+  height: 50px;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #099901;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #575757;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: center;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color:green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ocultar el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo del botón */
+.menu-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  background: #111;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ocultar el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Botón del menú */
+.buttonM {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  background: #111;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Menú lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* oculto inicialmente */
+  width: 250px;
+  height: 100%;
+  background: #111;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  background: #575757;
+}
+
+/* mostrar menu cuando se activa el checkbox */
+#menu-toggle:checked ~ .menu {
+  left: 0;
+}
+
+/* cambiar color del botón al abrir */
+#menu-toggle:checked + .buttonM {
+  background: #575757;
+}
+
+/*cerrar boton*/
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: #111;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+tr.presp1, tr.presp2, tr.presp3, tr.presp4, tr.presp5, tr.presp6, tr.presp7, tr.presp8, tr.presp9, tr.presp10, tr.presp11, tr.presp12, tr.presp13, tr.presp14 {
+  color: #ffffff; 
+  text-align: center;
+  align-items: center;
+  display: table-row;
+}
+div.content{
+  text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color:white;
+    font-size: 20px
+}
+div.container-principal{
+ text-align: center;
+    font-family:'Roboto', sans-serif ;
+    color:white;
+    font-size: 20px
+} 
+div.prox{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+/*
+ * ====================================
+ * Estilos del Carrusel (MODIFICADOS)
+ * ====================================
+*/
+
+/* 1. Ajustamos la altura total del carrusel */
+.carrusel-hero {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    background-color: #1a1a1a;
+    
+    /* * NUEVA ALTURA: La ajustamos para que quepa la
+     * imagen (ej. 300px) + el texto (ej. 150px) 
+    */
+    height: 450px; 
+}
+
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+
+}
+
+/* 2. Hacemos que el slide apile la imagen y el texto verticalmente */
+.carrusel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Apila los elementos (imagen y texto) */
+    align-items: center;
+    justify-content: flex-start; /* Alinea al inicio */
+    text-decoration: none; /* (Esto ya lo teníamos) */
+}
+
+/* 3. ¡EL CAMBIO PRINCIPAL! Definimos la imagen con tamaño mediano */
+.carrusel-slide img {
+    width: 50%;
+    height: 300px; 
+
+    object-fit: cover; /* Mantiene la proporción y cubre el espacio */
+    border-radius: 8px 8px 0 0; /* Redondea solo las esquinas superiores */
+}
+
+
+/* 4. Ajustamos la caja de información para que esté DEBAJO */
+a.div.carrusel-info {
+    width: 100%;
+    height: 150px; /* Altura fija para la info (450px total - 300px imagen) */
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño */
+    text-align: left; /* Queda mejor alineado a la izquierda */
+    padding: 20px;
+    background-color: #2a2a2a; /* Fondo sólido oscuro */
+    border-radius: 0 0 8px 8px; /* Redondea solo las esquinas inferiores */
+}
+
+/* 5. Ajustamos el texto (ya no necesita sombra) */
+.carrusel-info h2 {
+    font-size: 2em; /* Un poco más pequeño que antes */
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00bfff;
+    text-shadow: none; 
+}
+
+.carrusel-info p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #f0f0f0; 
+}
+
+
+.carrusel-info .cta-button {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.carrusel-slide {
+    text-decoration: none;
+    color: inherit;
+}
+
+.carrusel-slide .carrusel-info h2,
+.carrusel-slide .carrusel-info p {
+    color: inherit; 
+}
+
+.carrusel-slide .carrusel-info h2 {
+    color: #00bfff;
+}
+.carrusel-slide .carrusel-info p {
+    color: #f0f0f0; 
+}
+
+
+/* ---- 1. Estilos del Header ---- */
+header {
+    display: flex;                 
+    justify-content: space-between;
+    align-items: center;          
+    background-color: #1a1a1a;
+    padding: 10px 5%; /* 10px arriba/abajo, 5% a los lados */
+    border-bottom: 2px solid #00bfff;
+}
+
+/* ---- 2. Estilos del Logo ---- */
+.logo h1 {
+    margin: 0; /* Quita el margen por defecto del h1 */
+}
+.logo h1 a {
+    color:maroon;
+    text-decoration: none;
+    font-size: 1.8em;
+}
+
+/* ---- 3. El Menú (Nav) ---- */
+.menu-principal ul {
+    display: flex;         /* Pone los <li> en fila (horizontal) */
+    list-style: none;      /* Quita los puntos de la lista */
+    margin: 0;             /* Quita márgenes por defecto */
+    padding: 0;            /* Quita paddings por defecto */
+}
+
+.menu-principal ul li {
+    margin-left: 25px; /* Añade espacio ENTRE cada elemento del menú */
+}
+
+.menu-principal ul li a {
+    color: #f0f0f0; /* Color de texto blanco */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.menu-principal ul li a:hover {
+    color: #00bfff; /* Color azul al pasar el ratón */
+}
+
+.container{
+     --bg:#0f1722; --card:#0b1220; --accent:#ff5c7c; --text:#e6eef8; }
+        body { margin:0; font-family: Inter, system-ui, Arial, sans-serif; background:linear-gradient(180deg,#061024 0%,#071625 100%); color:var(--text); }
+        .container { max-width:900px; margin:48px auto; padding:24px; }
+        .card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); padding:28px; border-radius:10px; box-shadow:0 6px 20px rgba(2,6,23,0.6); }
+        h1 { margin:0 0 8px; font-size:1.8rem; color:var(--accent); }
+        p { margin:0 0 12px; line-height:1.6; }
+        ul { margin:8px 0 16px 20px; }
+        .cta { display:inline-block; padding:10px 14px; background:var(--accent); color:white; text-decoration:none; border-radius:8px; font-weight:600; }
+        @media (max-width:520px){ .container{margin:20px;padding:16px} h1{font-size:1.4rem} 
+        .card{padding:20px} 
+}
+
+.piepag{
+    font-family:'Roboto', sans-serif ;
+    color:white;
+    font-size: 20px
+}
+
+        
