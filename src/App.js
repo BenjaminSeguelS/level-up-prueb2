@@ -12,6 +12,7 @@ import Login from './paginas/login';
 import Registro from './paginas/registro';
 import InformacionNosotros from './paginas/InformacionNosotros';
 import Ofertas from './paginas/productos';
+import CompraExitosa from './paginas/compraexitosa';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/nosotros" element={<InformacionNosotros />} />
             <Route path="/ofertas" element={<Ofertas />} />
+            <Route path="/compra-exitosa" element={<CompraExitosa />} />
           </Routes>
         </main>
 
