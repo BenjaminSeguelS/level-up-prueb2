@@ -3,7 +3,7 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .titulo-seccion {
@@ -150,7 +150,6 @@
 /* Responsive Design para Contacto */
 @media (max-width: 900px) {
     .grid-contacto {
-        grid-template-columns: 1fr; /* Se apilan en una sola columna en pantallas más pequeñas */
         gap: 30px;
     }
     .titulo-seccion {

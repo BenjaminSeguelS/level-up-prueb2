@@ -5,24 +5,28 @@ function CompraExitosa() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const status = searchParams.get('status');
-  const [mensaje, setMensaje] = useState("Procesando...");
+  const [mensaje, setMensaje] = useState("Procesando pago...");
 
   useEffect(() => {
     if (status === 'success') {
       setMensaje("¡Pago Exitoso! Gracias por tu compra.");
-      // Aquí podrías vaciar el carrito
     } else if (status === 'rejected') {
-      setMensaje("El pago fue rechazado o anulado.");
-    } else {
-      setMensaje("Hubo un error al procesar el pago.");
+      setMensaje("El pago fue rechazado por el banco.");
+    } else if (status === 'error') {
+      setMensaje("Hubo un error en la comunicación con el pago.");
     }
   }, [status]);
 
   return (
-    <div style={{ padding: '50px', textAlign: 'center' }}>
+    <div style={{ padding: '50px', textAlign: 'center', color: 'white' }}>
       <h1>{mensaje}</h1>
-      <button onClick={() => navigate('/')} style={{ marginTop: '20px', padding: '10px 20px' }}>
-        Volver al inicio
+      
+      {/* Botón modificado para volver a Productos */}
+      <button 
+        onClick={() => navigate('/productos')} 
+        style={{ marginTop: '20px', padding: '10px 20px', cursor: 'pointer', fontSize: '16px' }}
+      >
+        Volver a Productos
       </button>
     </div>
   );

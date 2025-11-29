@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
-import axios from 'axios'; // <--- AGREGA ESTO ARRIBA
+import axios from 'axios';
 import '../css/ofertass.css';
 
 function CarritoModal() {

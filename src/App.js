@@ -1,7 +1,6 @@
 import React from 'react';
 import { CarritoProvider } from './context/CarritoContext';
 import CarritoModal from './components/CarritoModal';
-// Importa Link aquí
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 // Importa tus páginas...
@@ -12,39 +11,30 @@ import Login from './paginas/login';
 import Registro from './paginas/registro';
 import InformacionNosotros from './paginas/InformacionNosotros';
 import Ofertas from './paginas/productos';
-import CompraExitosa from './paginas/compraexitosa';
+import CompraExitosa from './paginas/compraexitosa'; // Asegúrate que este archivo exista
+
+// === AQUÍ ESTABA EL PROBLEMA: Faltaban estas líneas ===
+import './css/style.css'; 
+import './css/ofertass.css'; 
+// =====================================================
 
 function App() {
   return (
     <CarritoProvider>
       <BrowserRouter>
-        {/* === INICIO DEL REFACTOR === */}
-        {/* - fondo [#181818], borde inferior azul, padding inferior de 10px 
-          - Por defecto (móvil), es 'p-4' (padding de 4)
-          - En pantallas medianas ('md:') y superiores, el padding es 0 0 10px 0
-        */}
+        {/* Header con estilos Tailwind + Diseño personalizado */}
         <header className="bg-[#181818] border-b-2 border-[#00bfff] p-4 md:p-0 md:pb-[10px]">
-          {/* - max-w-6xl (equivale a 1200px), centrado (mx-auto)
-            - flex, centrado vertical (items-center), justificado (justify-between)
-            - padding de 10px 20px
-            - Dirección: Columna en móvil (flex-col) y Fila en escritorio (md:flex-row)
-          */}
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between p-[10px_20px]">
-            <h1 className="m-0 text-3xl"> {/* text-3xl es aprox 2.2rem */}
+            <h1 className="m-0 text-3xl">
               <Link to="/" className="text-[#00bfff] no-underline">GamerHub</Link>
             </h1>
             <nav>
-              {/* - flex, list-style-none, sin margen/padding
-                - 'gap-4' (aprox 18px)
-                - 'mt-4' (margen superior en móvil)
-                - 'md:mt-0' (sin margen superior en escritorio)
-              */}
               <ul className="flex flex-wrap justify-center gap-4 list-none m-0 p-0 mt-4 md:mt-0">
-                <li><Link to="/inicio" className="text-white no-underline">Inicio</Link></li>
-                <li><Link to="/productos" className="text-white no-underline">Productos</Link></li>
-                <li><Link to="/contacto" className="text-white no-underline">Contacto</Link></li>
-                <li><Link to="/nosotros" className="text-white no-underline">Sobre Nosotros</Link></li>
-                <li><Link to="/login" className="text-white no-underline">Login</Link></li>
+                <li><Link to="/inicio" className="text-white no-underline hover:text-[#00bfff] transition-colors">Inicio</Link></li>
+                <li><Link to="/productos" className="text-white no-underline hover:text-[#00bfff] transition-colors">Productos</Link></li>
+                <li><Link to="/contacto" className="text-white no-underline hover:text-[#00bfff] transition-colors">Contacto</Link></li>
+                <li><Link to="/nosotros" className="text-white no-underline hover:text-[#00bfff] transition-colors">Sobre Nosotros</Link></li>
+                <li><Link to="/login" className="text-white no-underline hover:text-[#00bfff] transition-colors">Login</Link></li>
               </ul>
             </nav>
           </div>
@@ -52,8 +42,7 @@ function App() {
 
         <CarritoModal />
         
-        {/* No necesitas estilizar 'main' si el footer está al final */}
-        <main className="min-h-[80vh]"> 
+        <main className="min-h-[80vh] container mx-auto p-4"> 
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/inicio" element={<Inicio />} />
@@ -70,7 +59,6 @@ function App() {
         <footer className="bg-[#232323] text-[#aaa] text-center p-[18px_0] border-t-2 border-[#00bfff]">
           <span>© {new Date().getFullYear()} GamerHub. Todos los derechos reservados.</span>
         </footer>
-        {/* === FIN DEL REFACTOR === */}
       </BrowserRouter>
     </CarritoProvider>
   );

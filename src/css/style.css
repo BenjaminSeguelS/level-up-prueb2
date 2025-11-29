@@ -1,52 +1,229 @@
+/* =========================================
+   ESTILOS GENERALES Y BASE
+   ========================================= */
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #181818;
-	color: #f0f0f0;
-	margin: 0;
-	padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fondo un poco más oscuro para contraste */
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-main.container {
-	max-width: 900px;
-	margin: 40px auto;
-	padding: 30px;
-	background: #232323;
-	border-radius: 12px;
-	box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+/* Enlaces por defecto */
+a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #e50074;
 }
 
-.card {
-	background: #222;
-	border-radius: 10px;
-	box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-	padding: 32px 24px;
-	margin-bottom: 30px;
+/* =========================================
+   LAYOUT PRINCIPAL (GRILLA)
+   ========================================= */
+.container-principal {
+    display: grid;
+    /* 70% contenido principal, 30% barra lateral */
+    grid-template-columns: 3fr 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-h1, h2, h3 {
-	color: #00bfff;
-	margin-top: 0;
+/* =========================================
+   CARRUSEL (HERO SECTION)
+   ========================================= */
+.carrusel-hero {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #000;
 }
 
-ul {
-	padding-left: 20px;
+.carrusel-contenedor {
+    position: relative;
+    height: 400px; /* Altura fija para evitar saltos */
+    width: 100%;
 }
 
-li {
-	margin-bottom: 8px;
+.carrusel-slide {
+    display: none; /* Ocultamos todos por defecto */
+    height: 100%;
+    width: 100%;
 }
 
-.cta {
-	display: inline-block;
-	background: #e50074;
-	color: #fff;
-	padding: 12px 28px;
-	border-radius: 6px;
-	text-decoration: none;
-	font-weight: bold;
-	margin-top: 18px;
-	transition: background 0.2s;
+.carrusel-slide.active {
+    display: block; /* Solo mostramos el activo */
+    animation: fadeIn 0.5s ease-in-out;
 }
-.cta:hover {
-	background: #b8005a;
+
+/* Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena el espacio sin deformarse */
+    filter: brightness(0.7); /* Oscurece la imagen para que se lea el texto */
+}
+
+.carrusel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Degradado elegante */
+    box-sizing: border-box;
+}
+
+.carrusel-info h2 {
+    color: #00bfff;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carrusel-info p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* Botones del carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carrusel-btn:hover {
+    background: #e50074;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* =========================================
+   TARJETAS DE NOTICIAS (MAIN)
+   ========================================= */
+.noticias-recientes h3, 
+aside h3 {
+    border-bottom: 2px solid #e50074;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.noticia-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,191,255,0.1); /* Brillo azul sutil */
+    border-color: #00bfff;
+}
+
+.noticia-card h4 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 0;
+}
+
+/* Videos responsivos */
+.noticia-card iframe {
+    width: 100%;
+    aspect-ratio: 16/9; /* Mantiene la proporción de video perfecta */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   BARRA LATERAL (ASIDE)
+   ========================================= */
+aside {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky; /* Hace que el menú te siga al bajar */
+    top: 20px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.95rem;
+}
+
+aside li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.piepag {
+    background: #000;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 2px solid #00bfff;
+}
+
+.enlaces-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL)
+   ========================================= */
+@media (max-width: 768px) {
+    .container-principal {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+    
+    .carrusel-contenedor {
+        height: 250px; /* Más bajo en celular */
+    }
+
+    .carrusel-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .carrusel-info p {
+        display: none; /* Ocultar texto largo en celular */
+    }
 }

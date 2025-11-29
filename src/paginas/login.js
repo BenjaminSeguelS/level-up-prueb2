@@ -1,35 +1,52 @@
 import React, { useState } from 'react';
-
-
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 
 function Login() {
-    // 2. Estado para manejar los inputs del formulario
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); // Prevenimos el refresco de la página
-        console.log('Iniciando sesión con:', { username, password });
-        // Aquí iría tu lógica de autenticación
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        
+        try {
+            // Enviamos usuario y contraseña al endpoint de login que creamos
+            const response = await axios.post('http://localhost:8080/api/usuarios/login', {
+                usuario: username,
+                password: password
+            });
+
+            if (response.status === 200) {
+                alert(`¡Bienvenido, ${response.data.nombreCompleto}!`);
+                console.log("Usuario logueado:", response.data);
+                
+                // Aquí podrías guardar el usuario en localStorage si quieres mantener la sesión
+                // localStorage.setItem('usuario', JSON.stringify(response.data));
+                
+                navigate('/'); // Redirigir al inicio o dashboard
+            }
+
+        } catch (error) {
+            console.error("Error de login:", error);
+            if (error.response && error.response.status === 401) {
+                alert("Contraseña incorrecta.");
+            } else if (error.response && error.response.status === 404) {
+                alert("El usuario no existe.");
+            } else {
+                alert("Error de conexión con el servidor.");
+            }
+        }
     };
 
-    // 3. Cambios en JSX:
-    // - 'for' en <label> cambia a 'htmlFor'
-    // - Los inputs usan 'value' y 'onChange' para estar "controlados" por React
     return (
         <div>
             <h1>Level-UP</h1>
             <br />
-            
-            {/* El menú lateral debería ser un componente separado: <MenuLateral /> */}
-
             <div className="registro-container">
                 <h2>Iniciar Sesión</h2>
                 
                 <form id="loginForm" onSubmit={handleSubmit}>
-                    
                     <div className="campo-grupo">
                         <label htmlFor="username">Usuario:</label>
                         <input 
@@ -59,7 +76,6 @@ function Login() {
                     <p className="enlace-login">
                         ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
                     </p>
-
                 </form>
             </div>
         </div>
