@@ -5,7 +5,7 @@ import '../css/ofertass.css';
 import axios from 'axios'; 
 
 // URL del Endpoint de Spring Boot
-const API_URL = 'http://localhost:8080/api/productos'; 
+const API_URL = 'http://52.2.45.72/api/productos';
 
 function Productos() {
     const { agregarAlCarrito } = useContext(CarritoContext);

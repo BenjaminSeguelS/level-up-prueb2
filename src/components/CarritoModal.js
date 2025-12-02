@@ -15,7 +15,7 @@ function CarritoModal() {
 
     try {
       // 1. Pedir a nuestro Backend que inicie la transacción
-      const response = await axios.post('http://localhost:8080/api/webpay/create', {
+      const response = await axios.post('http://52.2.45.72/api/webpay/create', {
         amount: total
       });
 
